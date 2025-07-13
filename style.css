@@ -1,0 +1,648 @@
+/* ======= FONT FACE ======= */
+@font-face {
+    font-family: 'Century Gothic Pro';
+    src: url('fonts/CenturyGothicPro.woff2') format('woff2'),
+         url('fonts/CenturyGothicPro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ======= BASE ======= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ======= TYPOGRAPHY ======= */
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+h1 {
+    font-family: 'Century Gothic Pro', sans-serif;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.header-right {
+    justify-content: flex-end; /* push content to the right */
+}
+
+.header-right h2 {
+    text-align: right;
+    width: 100%;
+}
+
+.gallery-header h2 {
+    margin-bottom: 40px; /* adjust to your preferred spacing */
+}
+
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: justify;
+}
+
+.subtitle {
+    font-weight: 300;
+    color: #000;
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.text ul {
+    margin-top: 0;
+    margin-bottom: 16px; /* same vertical spacing as paragraphs */
+    padding-left: 20px;  /* standard indentation */
+    color: rgba(0, 0, 0, 0.5); /* match paragraph text color */
+    font-weight: 300;  /* match paragraph font weight */
+    font-size: 1rem;   /* match paragraph font size */
+    line-height: 1.6;  /* match paragraph line height */
+}
+
+.text ul li {
+    margin-bottom: 8px; /* spacing between bullet points */
+}
+
+
+/* ======= HERO ======= */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1, .hero p {
+    font-family: 'Century Gothic Pro', sans-serif;
+}
+
+/* ======= NAVBAR ======= */
+
+.nav-footer-bar {
+    background: rgba(0, 0, 0, 0.05); /* match footer background */
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-footer-bar .nav-link {
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    transition: font-weight 0.2s, color 0.2s;
+}
+
+.nav-footer-bar .nav-link:hover {
+    font-weight: 600;
+    color: #111;
+}
+
+/* Inverted black background navbar */
+.navbar.navbar-inverted {
+    background: black;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar.navbar-inverted .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s, font-weight 0.2s;
+}
+
+.navbar.navbar-inverted .nav-link:hover {
+    color: #ddd;
+    font-weight: 600;
+}
+/* ======= ABOUT ME ======= */
+
+.about-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-contact, .about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.about-contact {
+    flex: 1; /* 1/3 */
+}
+
+.about-text {
+    flex: 2; /* 2/3 */
+}
+
+.about-contact h3,
+.about-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    margin-top: 0px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* aligns icon and text vertically */
+  gap: 10px;
+}
+
+.contact-item p {
+  margin: 5px;
+  line-height: 1.2;
+}
+
+.contact-icon {
+  height: auto;   /* match the height of the text line */
+  width: 1em;   /* keep aspect ratio */
+  flex-shrink: 0;
+}
+
+
+.about-text p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 12px;
+}
+
+/* Ensure email links are clean */
+.about-contact a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.about-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-contact, .about-text {
+        width: 100%;
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* ======= SECTIONS ======= */
+.section {
+    padding: 40px 20px;
+}
+
+.white-bg {
+    background: #fff;
+}
+
+.black-bg {
+    background: #111;
+    color: white;
+}
+
+.light {
+    background: #fff;
+    color: #000;
+}
+
+/* ======= CONTAINERS ======= */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.container.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ======= TO COMPRESS SECTION ======= */
+/* ======= TO-COMPRESS PAGE SPECIFIC ======= */
+
+/* Full-width top inverted image */
+.compress-hero img {
+    width: 100%;
+    display: block;
+    height: auto;
+    filter: invert(1);
+}
+
+/* Centered image below nav */
+.compress-centered-image {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+}
+
+.compress-centered-image img {
+    max-width: 800px;
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;  /* this centers it horizontally */
+}
+
+/* 2/3 - 1/3 layout */
+.compress-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    gap: 40px;
+    align-items: flex-start;
+    background: white;
+}
+
+.compress-text-block {
+    flex: 2;
+}
+
+.compress-text-block h2 {
+    font-family: 'Century Gothic Pro', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.compress-text-block p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.compress-text-block img {
+    width: 100%;
+    margin: 20px 0;
+    display: block;
+}
+
+.compress-images-vertical {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Frame images like index gallery images */
+.compress-images-vertical .image-border-wrapper {
+    padding: 10px;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    background: white; /* ensures transparent PNGs have white bg */
+}
+
+.compress-images-vertical .image-border-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .compress-container {
+        flex-direction: column;
+    }
+    .compress-text-block,
+    .compress-images-vertical {
+        width: 100%;
+    }
+}
+
+
+/* ======= TEXT BLOCK ======= */
+.text {
+    flex: 1;
+    padding: 10px;
+}
+
+.text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 16px;
+}
+
+.project-section.highlighted .text p,
+.black-bg p,
+.black-bg .text p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ======= IMAGES ======= */
+.project-img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+}
+
+.image-border-wrapper {
+    display: inline-block;
+    padding: 10px;
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.light .image-border-wrapper {
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.full-width-images {
+    display: flex;
+    gap: 5px;
+    width: 100vw;      /* full viewport width */
+    margin: 0;         /* no margin */
+    padding: 0;        /* no padding */
+}
+
+.full-width-images .full-width-image {
+    flex: 1 1 0;
+    width: 50vw;       /* half viewport width */
+    object-fit: cover;
+    display: block;
+    height: auto;      /* keep aspect ratio */
+}
+
+.project-img-no-crop {
+    width: 100%;
+    height: auto;   /* lets image scale naturally */
+    object-fit: contain;  /* or remove object-fit altogether */
+    display: block;
+}
+
+/* 1. White background for transparent PNG images in black gallery */
+#all-projects .image-border-wrapper img.transparent-png {
+    background-color: white;
+    display: block;
+}
+
+/* 2. Borders: white border on black-bg gallery images */
+#all-projects .image-border-wrapper {
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 2b. Borders: black border on white-bg gallery images */
+.section.white-bg .image-border-wrapper {
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Invert colors of horizontal image */
+.container.horizontal-image-wrapper img {
+    filter: invert(1);
+}
+
+
+/* ======= BUTTONS ======= */
+.see-more-button,
+.link-button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-decoration: none;
+    border: 0.5px solid;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.see-more-button {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.see-more-button:hover {
+    background: white;
+    color: #111;
+}
+
+.link-button {
+    color: black;
+    border-color: black;
+}
+
+.link-button:hover {
+    background: black;
+    color: white;
+}
+
+/* ======= GALLERY GRID ======= */
+.gallery-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.gallery-grid a {
+    flex: 1 1 calc(28% - 40px);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s;
+}
+
+.gallery-grid a:hover {
+    transform: scale(1.02);
+}
+
+.gallery-grid a:hover p {
+    font-weight: 400;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4/4;
+    object-fit: cover;
+}
+
+.gallery-grid p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* ======= FOOTER ======= */
+.site-footer {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    width: 100%;
+}
+
+.site-footer .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* keep horizontal */
+    gap: 20px; /* remove excess gaps */
+}
+
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+}
+
+.footer-left {
+    flex: 0 1 auto; /* allow to shrink if needed */
+    text-align: left;
+}
+
+.footer-center {
+    flex: 0 1 auto; /* allow to shrink if needed */
+    text-align: center;
+}
+
+.footer-right {
+    flex: 0 1 auto; /* allow to shrink if needed */
+    text-align: right;
+}
+
+.footer-left h2,
+.footer-center a,
+.footer-right p {
+    font-weight: 300;
+}
+
+.footer-left h2 {
+    font-family: 'Century Gothic Pro', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-top: 15px;
+}
+
+.footer-center .navbar {
+    display: flex;
+    flex-wrap: wrap; /* allow nav items to wrap if truly necessary on small screens */
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Fix footer nav links styling */
+.footer-center .nav-link {
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    transition: font-weight 0.2s, color 0.2s;
+}
+
+.footer-center .nav-link:hover {
+    font-weight: 600;
+    color: #111;
+}
+
+
+
+.footer-right p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .site-footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+    }
+
+    .footer-right p {
+        text-align: center;
+    }
+}
+
