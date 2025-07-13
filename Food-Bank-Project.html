@@ -16,7 +16,7 @@
 
 <section class="section white-bg">
         <div class="container reverse">
-            <img src="Food-Bank-Project/meeple-diagram.jpg" alt="Food Bank Concept Diagram" class="project-img">
+            <img src="Food-Bank-Project/render.png" alt="Food Bank Render" class="project-img match-text-height">
             <div class="text">
                 <h2>FOOD BANK DESIGN PROJECT</h2>
                 <p class="subtitle">REIMAGINING THE FOOD BANK AS A SPACE FOR SHARING, GATHERING, AND GROWING.</p>
@@ -48,7 +48,7 @@
         <!-- Right Column -->
         <div class="right-column">
             <img src="Food-Bank-Project/elevation-07.png" alt="West Elevation Drawing">
-            <p class="subtitle">WEST ELEVATION</p>
+            <p class="subtitle" style="text-align: center;">WEST ELEVATION</p>
 
         </div>
         
@@ -91,4 +91,31 @@
     </footer>
 
 </section>   
+<dialog id="lightbox">
+  <img id="lightbox-img" alt="Enlarged Image" />
+</dialog>
+
+
+<script>
+  // Make all images clickable
+document.querySelectorAll('img').forEach(img => {
+  img.style.cursor = 'pointer';
+
+  img.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.showModal();
+  });
+});
+
+// Close dialog on any click inside the dialog (including on image)
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').close();
+});
+
+</script>
+
+
 </body>
+</html>

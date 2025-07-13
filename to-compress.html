@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
+
 <body>
 
     <!-- BLACK BACKGROUND: Nav + Hero Image -->
@@ -29,30 +30,88 @@
         <img src="Compress-Project/compress_header.png" alt="Compress Title Image">
     </section>
 
-    <!-- WHITE BACKGROUND: Main Content -->
+<!-- WHITE BACKGROUND: Main Content -->
 <section class="compress-container">
-    <!-- LEFT 2/3: Text + Images -->
+
+    <!-- MAIN CONTENT AREA -->
     <div class="compress-text-block">
-        <div class="image-row">
+
+        <!-- Intro Text -->
+        <p class="subtitle" style="text-align: center;">
+            AN ARCHITECTURAL EXPLORATION OF COMPRESSION, TENSION, AND THE SHIFTING OF FAULT LINES
+        </p>
+
+        <!-- Two section cut drawings -->
+        <div class="image-row two-across">
             <img src="Compress-Project/1Bcompress_Drawings copy-05.png" alt="Section Cut Drawing">
             <img src="Compress-Project/1Bcompress_Drawings copy-06.png" alt="Section Cut Drawing 2">
         </div>
-        <p>
-            These incisions create pathways that invite flow across, upward, and downward, transforming the dense 
-            structure to allow transition and movement. This approach investigates how architectural interventions can 
-            embody tectonic processes and the perception of space under pressure.
+
+        <!-- Five photos horizontally -->
+        <div class="image-row five-across">
+            <img src="Compress-Project/DSC_0453.jpg" alt="Image 1">
+            <img src="Compress-Project/DSC_0458.jpg" alt="Image 2">
+            <img src="Compress-Project/DSC_0456 copy.jpg" alt="Image 3">
+            <img src="Compress-Project/DSC_0446.jpg" alt="Image 4">
+            <img src="Compress-Project/IMG_2705.jpeg" alt="Image 5">
+        </div>
+
+        <!-- Additional text -->
+        <p> THE PAVILION WALLS GUIDE INDIVIDUALS THROUGH SPACES OF COMPRESSION.
+            THEY CONTAIN AND SHAPE EACH PATHWAY AND PLATFORM, DIRECTING MOVEMENT THROUGHOUT.
         </p>
+
+        <div class="image-row two-across">
+            <img src="Compress-Project/1Bcompress_Drawings copy-15.png" alt="East Elevation">
+            <img src="Compress-Project/1Bcompress_Drawings copy-14.png" alt="West Elevation">
+        </div>
     </div>
 
-    <!-- RIGHT 1/3: Vertical Framed Images -->
-    <div class="compress-images-vertical">
-        <img src="Compress-Project/DSC_0453.jpg" alt="Side Image 1">
-        <img src="Compress-Project/DSC_0458.jpg" alt="Side Image 2">
-        <img src="side3.jpg" alt="Side Image 3">
-        <img src="Compress-Project/DSC_0446.jpg" alt="Side Image 4">
-        <img src="Compress-Project/IMG_2705.jpeg" alt="Side Image 5">
-    </div>
 </section>
+
+
+<footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2 class="footer-name">ISABEAUX GRAHAM</h2>
+            </div>
+
+            <nav class="footer-center navbar">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#highlighted-projects" class="nav-link">Highlighted Projects</a>
+                <a href="index.html#all-projects" class="nav-link">All Projects</a>
+            </nav>
+
+            <div class="footer-right contact-info">
+                <p>isabeauxgraham@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+<dialog id="lightbox">
+  <img id="lightbox-img" alt="Enlarged Image" />
+</dialog>
+
+
+<script>
+  // Make all images clickable
+document.querySelectorAll('img').forEach(img => {
+  img.style.cursor = 'pointer';
+
+  img.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.showModal();
+  });
+});
+
+// Close dialog on any click inside the dialog (including on image)
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').close();
+});
+
+</script>
 
 
 </body>

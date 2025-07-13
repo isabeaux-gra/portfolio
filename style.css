@@ -102,7 +102,7 @@ p {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('hero.jpg') center/cover no-repeat;
+    background: url('hero3.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +114,6 @@ p {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .hero-text {
@@ -124,6 +123,10 @@ p {
 
 .hero h1, .hero p {
     font-family: 'Century Gothic Pro', sans-serif;
+}
+
+.light-weight {
+    opacity: 0.8;           /* slight fade to appear lighter */
 }
 
 /* ======= NAVBAR ======= */
@@ -306,7 +309,7 @@ p {
 /* Centered image below nav */
 .compress-centered-image {
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 20px 0px 20px;
     background: white;
 }
 
@@ -318,63 +321,73 @@ p {
     margin: 0 auto;  /* this centers it horizontally */
 }
 
-/* 2/3 - 1/3 layout */
-.compress-container {
-    display: flex;
-    max-width: 1200px;   /* was 1000px, now wider */
-    margin: 40px auto;
-    gap: 40px;           /* increased gap for air */
-    padding: 0 40px;     /* wider padding */
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
 
-.compress-text-block {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
+.compress-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 20px;
 }
 
 .image-row {
     display: flex;
-    gap: 10px;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 0 0 40px 0; 
+    max-width: 1000px;
 }
 
 .image-row img {
-    width: 55%;   /* was 48%, now larger */
-    max-width: 100%; /* prevents overflow */
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    border: 0.5px solid rgba(0, 0, 0, 0.3);
 }
 
-.compress-images-vertical {
-    flex: 1;
+.image-row.two-across img {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+}
+
+.image-row.five-across {
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap; /* keep all images in one row */
+    justify-content: space-between;
     gap: 10px;
+    max-width: 1000px; /* or your preferred width */
+    margin: 20px auto;
 }
 
-.compress-images-vertical img {
-    width: 65%;    /* slightly smaller */
-    align-self: center; /* center within vertical stack */
-    object-fit: cover;
-    border: 0.5px solid rgba(0, 0, 0, 0.3);
+.image-row.five-across img {
+    width: 19%; /* 5 images across with some gap */
+    aspect-ratio: 4 / 3; /* landscape ratio */
+    object-fit: cover; /* crops images nicely */
+    border: 0.5px solid rgba(0, 0, 0, 0.5); /* frame similar to your other images */
+    display: block;
 }
 
-/* Responsive adjustment for smaller screens */
-@media (max-width: 800px) {
-    .compress-container {
-        flex-direction: column;
+
+@media (max-width: 900px) {
+    .image-row.two-across img {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
-    .image-row img {
-        width: 100%;
+
+    .image-row.five-across img {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
     }
 }
+
+
 
 /* ======= FOOD BANK SECTION ======= */
+.match-text-height {
+    height: 375px;     /* adjust this value as needed */
+    width: auto;       /* maintain aspect ratio */
+    object-fit: contain;
+}
+
 .two-column-section {
     display: flex;
     max-width: 1000px;
@@ -600,6 +613,39 @@ img.no-border {
     font-size: 1rem;
     font-weight: 300;
 }
+
+
+/* ======= ENLARGE IMAGES ======= */
+dialog[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  padding: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-sizing: border-box;
+}
+
+dialog img {
+  max-width: 100%;
+  max-height: 100%;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+
+
+
+
+
 
 /* ======= FOOTER ======= */
 .site-footer {

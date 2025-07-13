@@ -95,5 +95,31 @@
             </div>
         </div>
     </footer>
+<dialog id="lightbox">
+  <img id="lightbox-img" alt="Enlarged Image" />
+</dialog>
+
+
+<script>
+  // Make all images clickable
+document.querySelectorAll('img').forEach(img => {
+  img.style.cursor = 'pointer';
+
+  img.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.showModal();
+  });
+});
+
+// Close dialog on any click inside the dialog (including on image)
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').close();
+});
+
+</script>
+
+
 </body>
 </html>
